@@ -1,0 +1,1 @@
+{"version":3,"file":"RecordTab.d.ts","sourceRoot":"","sources":["../../../src/client/panel/RecordTab.tsx"],"names":[],"mappings":"AACA,OAAO,KAAK,EAAE,SAAS,EAAE,MAAM,WAAW,CAAA;AAC1C,OAAO,KAAK,EAAE,kBAAkB,EAAE,MAAM,cAAc,CAAA;AA2CtD,wBAAgB,SAAS,CAAC,EAAE,GAAG,EAAE,OAAO,EAAE,EAAE;IAAE,GAAG,EAAE,SAAS,CAAC;IAAC,OAAO,EAAE,kBAAkB,CAAA;CAAE,+BAsI1F"}
