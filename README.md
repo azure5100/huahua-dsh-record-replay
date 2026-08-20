@@ -1,4 +1,22 @@
-# dsh-record-replay · DSH 录制回放（Record & Replay）
+
+
+<div align="center">
+
+# 🐻 huahua 出品 · DSH Record & Replay
+
+**DSH 录制回放插件 · 由 huahua 打造并持续维护**
+
+| 品牌 | 项目 |
+| --- | --- |
+| 🐻 huahua | 本插件（录制回放） |
+| 🐻 huahua | [huahua-dsh-plugin-orchestra](https://github.com/azure5100/huahua-dsh-plugin-orchestra) · 插件管理系统 |
+
+*huahua 系列：为 DeepSeek Harness 打造实用、完整、可维护的插件。*
+
+</div>
+
+---
+
 
 DSH Web GUI 的「录制回放」插件，两套能力：
 
@@ -103,3 +121,16 @@ pnpm smoke        # 对本机真实会话跑一遍 扫描→解析→建包→�
 ## License
 
 Apache-2.0。Vendored fzstd © 101arrowz, MIT（见 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)）。
+
+
+---
+
+## 🐻 huahua 出品
+
+**huahua**（花花的团队/个人）致力于为 DeepSeek Harness 打造高质量插件：
+
+- **[huahua-dsh-plugin-orchestra](https://github.com/azure5100/huahua-dsh-plugin-orchestra)** — DSH 插件管理系统：清单 / 更新检测 / 一键升级 / 备份回滚
+- **本插件（record-replay）** — DSH 录制回放：会话时间线 / 回放包 / 复刻 / 录屏生成技能
+
+功能完整、Windows 实测可用、持续维护。有问题欢迎提 Issue / PR。
+
