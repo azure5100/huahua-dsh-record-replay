@@ -7,6 +7,28 @@ DSH Web GUI 的「录制回放」插件，两套能力：
 
 > 类似 Codex 的 record & replay：录制是自动的，本插件补齐「回放 / 分享 / 复刻」这一半。
 
+
+> **衍生声明（Derivative notice）**：本仓库是 [kangshifu1/dsh-record-replay](https://github.com/kangshifu1/dsh-record-replay)（Apache-2.0）的适配衍生版。原项目作者：kangshifu1。本项目在此基础上做了 Windows / DSH rc.5 适配修复（见下方「Windows 适配」一节），其余功能与架构源自原项目。按 Apache-2.0 §4 注明来源与本项目改动。
+
+---
+
+## Windows 适配（Windows adaptation）
+
+本项目在 Windows + DeepSeek Harness 0.1.0-rc.5 上实测通过，并为此做了 **4 处客户端源码适配**（原版按更新一代 DSH 外壳的 DOM 约定编写，在 rc.5 上不可用）：
+
+| 文件 | 适配内容 |
+| --- | --- |
+| `src/client/mount.tsx` | 面板挂载选择器双匹配：`[data-pane="conversation"], [class*="centerCol"]`——适配 rc.5 外壳（无 data-pane，中央列为 CSS Module 类名 centerCol） |
+| `src/client/styles.ts` | 定位上下文同步双选择器——修复「进入面板后左侧主界面被整个盖住」的问题（rc.5 无 data-pane 定位上下文，绝对定位会锚定到外层 frame） |
+| `src/client/locales.ts` | 新增「关闭面板」文案（中英双语） |
+| `src/client/panel/ReplayPanel.tsx` | 面板头部加「关闭面板」按钮——原版无关闭入口，界面被盖住时无法返回对话 |
+
+**适配目标 DSH 版本**：DeepSeek Harness 0.1.0-rc.5（Windows 桌面版）。在带 `data-pane`/taskboard/ssh 面板的新版外壳上，双选择器保持向后兼容（老规则对不存在的元素是空操作）。
+
+> 完整适配过程与踩坑记录见：`docs/适配修复报告.md`（Windows 环境构建：NTFS 目录联接、pnpm 11、Node ≥ 20）。
+
+---
+
 ## 能力
 
 | 功能 | 说明 |

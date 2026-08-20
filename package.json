@@ -3,18 +3,31 @@
   "description": "Record & Replay for the dsh web GUI: (1) replay every automatically recorded session as a readable timeline, export/import shareable replay packs, re-run a recorded conversation; (2) Codex-style screen recording -> skill generation - record a computer-use session in the browser (getDisplayMedia -> webm + sampled frames), replay it, and have an agent analyze the frames and install a generated SKILL.md into ~/.dsh/skills. Hot-pluggable - mounted via the profile patch layer, no dsh source changes.",
   "version": "0.2.0",
   "type": "module",
-  "engines": { "node": "^22.19.0 || >=24.0.0" },
+  "engines": {
+    "node": "^22.19.0 || >=24.0.0"
+  },
   "main": "lib/index.js",
   "types": "lib/types/index.d.ts",
   "exports": {
-    ".": { "types": "./lib/types/index.d.ts", "default": "./lib/index.js" },
-    "./invariant": { "types": "./lib/types/invariant.d.ts", "default": "./lib/invariant.js" },
-    "./client": { "types": "./lib/types/client/index.d.ts", "default": "./lib/client.js" },
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./invariant": {
+      "types": "./lib/types/invariant.d.ts",
+      "default": "./lib/invariant.js"
+    },
+    "./client": {
+      "types": "./lib/types/client/index.d.ts",
+      "default": "./lib/client.js"
+    },
     "./src/*": "./src/*",
     "./package.json": "./package.json"
   },
   "dsh": {
-    "bundle": { "patch": "./cordis.patch.yml" },
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
     "client": {
       "inject": [
         "@deepseek-ai/dsh-client-runtime",
@@ -24,7 +37,10 @@
       "platform": "web"
     }
   },
-  "peerDependencies": { "react": "^18.2.0", "react-dom": "^18.2.0" },
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
   "devDependencies": {
     "@deepseek-ai/cordis": "^4.0.1",
     "@deepseek-ai/dsh-client-connection": "^0.1.0-rc.6",
@@ -45,16 +61,29 @@
     "typescript": "~5.7.2"
   },
   "files": [
-    "lib/**/*.js", "lib/**/*.js.map", "lib/**/*.d.ts", "lib/**/*.d.ts.map",
-    "src", "cordis.patch.yml", "README.md", "LICENSE"
+    "lib/**/*.js",
+    "lib/**/*.js.map",
+    "lib/**/*.d.ts",
+    "lib/**/*.d.ts.map",
+    "src",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE"
   ],
   "license": "Apache-2.0",
-  "repository": { "type": "git", "url": "https://github.com/kangshifu1/dsh-record-replay.git" },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/azure5100/huahua-dsh-record-replay.git"
+  },
   "scripts": {
     "build": "tsc -p tsconfig.build.json && node scripts/copy-vendor.mjs && tsdown",
     "bundle": "tsdown",
     "watch": "tsdown --watch",
     "typecheck": "tsc --noEmit",
     "smoke": "node scripts/smoke.mjs"
+  },
+  "homepage": "https://github.com/azure5100/huahua-dsh-record-replay#readme",
+  "bugs": {
+    "url": "https://github.com/azure5100/huahua-dsh-record-replay/issues"
   }
 }
